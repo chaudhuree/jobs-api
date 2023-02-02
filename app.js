@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('express-async-errors');
+require('express-async-errors'); //no need any try catch for this package
 const express = require('express');
 const app = express();
 
@@ -15,10 +15,15 @@ app.get('/', (req, res) => {
   res.send('jobs api');
 });
 
+
+
+//if no route found
 app.use(notFoundMiddleware);
+//if error found custom error handler
 app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 3000;
+//run command with PORT=3000 node app.js
 
 const start = async () => {
   try {
