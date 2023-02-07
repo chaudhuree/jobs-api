@@ -2,6 +2,8 @@ require('dotenv').config();
 require('express-async-errors'); //no need any try catch for this package
 const express = require('express');
 const app = express();
+// routers
+const authRouter = require('./routes/auth');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -17,6 +19,11 @@ app.get('/', (req, res) => {
 
 //db connection
 const connectDB = require('./db/connect');
+
+// routes
+app.use('/api/v1/auth', authRouter);
+
+
 
 //if no route found
 app.use(notFoundMiddleware);
