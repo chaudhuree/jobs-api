@@ -1,4 +1,9 @@
 #### Setup
+> postman data:
+
+[job api one](https://www.postman.com/chaudhuree/workspace/job-api-js/collection/20773865-623bad3d-2869-45bc-ade7-9fb24d256b09?action=share&creator=20773865)
+
+
 
 ```bash
 npm install && npm start
